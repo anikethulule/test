@@ -1,6 +1,6 @@
 ---
 - name: Configure the Host
-  hosts: User_Automation
+  hosts: all
   become: yes
   gather_facts: false
   roles:
