@@ -1,8 +1,14 @@
 ---
-- name: Configure FTP User on remote server
+- name: test playbook
   hosts: all
-  become: yes
-  gather_facts: false
-  roles:
-     - Ftp
-  
+  become: true
+  gather_facts: true
+  tasks:
+   - name: check free space 
+     command: free
+     register: free_space
+   - name: append output to a file
+     lineinfile:
+       line: "{{ free_space.stdout }}"
+       dest: "output.txt"
+       insertafter: EOF
