@@ -1,6 +1,6 @@
 ---
 - name: Configure FTP User on remote server
-  hosts: Ftp_Automation
+  hosts: all
   become: yes
   gather_facts: false
   roles:
