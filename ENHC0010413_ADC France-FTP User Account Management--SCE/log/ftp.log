@@ -1,0 +1,246 @@
+2023-12-13 12:17:47,126 p=4149 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-13 12:17:47,202 p=4149 u=root n=ansible | TASK [Ftp : Verify FTP group exists in server] *****************************************************************************************************************************
+2023-12-13 12:17:48,732 p=4149 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-13 12:17:48,733 p=4149 u=root n=ansible | changed: [localhost]
+2023-12-13 12:17:48,748 p=4149 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-13 12:17:49,582 p=4149 u=root n=ansible | changed: [localhost]
+2023-12-13 12:17:49,598 p=4149 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-13 12:17:49,673 p=4149 u=root n=ansible | skipping: [localhost]
+2023-12-13 12:17:49,691 p=4149 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-13 12:17:52,532 p=4149 u=root n=ansible | ok: [localhost]
+2023-12-13 12:17:52,559 p=4149 u=root n=ansible | TASK [Ftp : Deny SSH access to the newly created FTP user] *****************************************************************************************************************
+2023-12-13 12:17:54,967 p=4149 u=root n=ansible | ok: [localhost]
+2023-12-13 12:17:55,015 p=4149 u=root n=ansible | TASK [Ftp : Create directory for the user] *********************************************************************************************************************************
+2023-12-13 12:17:57,059 p=4149 u=root n=ansible | ok: [localhost]
+2023-12-13 12:17:57,080 p=4149 u=root n=ansible | TASK [Ftp : Set ownership of the directory] ********************************************************************************************************************************
+2023-12-13 12:17:58,021 p=4149 u=root n=ansible | ok: [localhost]
+2023-12-13 12:17:58,042 p=4149 u=root n=ansible | TASK [Ftp : Change permissions of the directory] ***************************************************************************************************************************
+2023-12-13 12:17:59,051 p=4149 u=root n=ansible | ok: [localhost]
+2023-12-13 12:17:59,113 p=4149 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-13 12:17:59,114 p=4149 u=root n=ansible | localhost                  : ok=7    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-13 14:59:25,501 p=2782 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-13 14:59:25,640 p=2782 u=root n=ansible | TASK [Ftp : Verify "ftp" group exists in server] ***************************************************************************************************************************
+2023-12-13 14:59:28,116 p=2782 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-13 14:59:28,118 p=2782 u=root n=ansible | changed: [localhost]
+2023-12-13 14:59:28,156 p=2782 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-13 14:59:29,522 p=2782 u=root n=ansible | changed: [localhost]
+2023-12-13 14:59:29,544 p=2782 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-13 14:59:29,644 p=2782 u=root n=ansible | skipping: [localhost]
+2023-12-13 14:59:29,670 p=2782 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-13 14:59:32,219 p=2782 u=root n=ansible | ok: [localhost]
+2023-12-13 14:59:32,256 p=2782 u=root n=ansible | TASK [Ftp : Deny SSH access to the newly created FTP user] *****************************************************************************************************************
+2023-12-13 14:59:33,942 p=2782 u=root n=ansible | ok: [localhost]
+2023-12-13 14:59:33,964 p=2782 u=root n=ansible | TASK [Ftp : Create directory for the user] *********************************************************************************************************************************
+2023-12-13 14:59:36,035 p=2782 u=root n=ansible | changed: [localhost]
+2023-12-13 14:59:36,057 p=2782 u=root n=ansible | TASK [Ftp : Set ownership of the directory] ********************************************************************************************************************************
+2023-12-13 14:59:37,285 p=2782 u=root n=ansible | ok: [localhost]
+2023-12-13 14:59:37,311 p=2782 u=root n=ansible | TASK [Ftp : Change permissions of the directory] ***************************************************************************************************************************
+2023-12-13 14:59:38,682 p=2782 u=root n=ansible | ok: [localhost]
+2023-12-13 14:59:38,810 p=2782 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-13 14:59:38,812 p=2782 u=root n=ansible | localhost                  : ok=7    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-13 15:00:53,044 p=2959 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-13 15:00:53,161 p=2959 u=root n=ansible | TASK [Ftp : Verify "Ravi" group exists in server] **************************************************************************************************************************
+2023-12-13 15:00:55,872 p=2959 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-13 15:00:55,876 p=2959 u=root n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/bin/python3.11"}, "changed": true, "cmd": ["getent", "group", "Ravi"], "delta": "0:00:00.040879", "end": "2023-12-13 15:00:55.669569", "msg": "non-zero return code", "rc": 2, "start": "2023-12-13 15:00:55.628690", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2023-12-13 15:00:55,881 p=2959 u=root n=ansible | ...ignoring
+2023-12-13 15:00:55,930 p=2959 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-13 15:00:57,699 p=2959 u=root n=ansible | changed: [localhost]
+2023-12-13 15:00:57,721 p=2959 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-13 15:00:57,814 p=2959 u=root n=ansible | skipping: [localhost]
+2023-12-13 15:00:57,838 p=2959 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-13 15:01:01,887 p=2959 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Group Ravi does not exist"}
+2023-12-13 15:01:01,893 p=2959 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-13 15:01:01,894 p=2959 u=root n=ansible | localhost                  : ok=2    changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=1   
+2023-12-13 15:01:24,248 p=3046 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-13 15:01:24,388 p=3046 u=root n=ansible | TASK [Ftp : Verify "aniket" group exists in server] ************************************************************************************************************************
+2023-12-13 15:01:26,101 p=3046 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-13 15:01:26,102 p=3046 u=root n=ansible | changed: [localhost]
+2023-12-13 15:01:26,122 p=3046 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-13 15:01:27,231 p=3046 u=root n=ansible | changed: [localhost]
+2023-12-13 15:01:27,251 p=3046 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-13 15:01:27,341 p=3046 u=root n=ansible | skipping: [localhost]
+2023-12-13 15:01:27,363 p=3046 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-13 15:01:29,556 p=3046 u=root n=ansible | changed: [localhost]
+2023-12-13 15:01:29,579 p=3046 u=root n=ansible | TASK [Ftp : Deny SSH access to the newly created FTP user] *****************************************************************************************************************
+2023-12-13 15:01:31,155 p=3046 u=root n=ansible | ok: [localhost]
+2023-12-13 15:01:31,178 p=3046 u=root n=ansible | TASK [Ftp : Create directory for the user] *********************************************************************************************************************************
+2023-12-13 15:01:33,061 p=3046 u=root n=ansible | changed: [localhost]
+2023-12-13 15:01:33,082 p=3046 u=root n=ansible | TASK [Ftp : Set ownership of the directory] ********************************************************************************************************************************
+2023-12-13 15:01:34,232 p=3046 u=root n=ansible | ok: [localhost]
+2023-12-13 15:01:34,260 p=3046 u=root n=ansible | TASK [Ftp : Change permissions of the directory] ***************************************************************************************************************************
+2023-12-13 15:01:35,298 p=3046 u=root n=ansible | ok: [localhost]
+2023-12-13 15:01:35,406 p=3046 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-13 15:01:35,407 p=3046 u=root n=ansible | localhost                  : ok=7    changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-13 15:03:35,705 p=3253 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-13 15:03:35,831 p=3253 u=root n=ansible | TASK [Ftp : Verify "aniket" group exists in server] ************************************************************************************************************************
+2023-12-13 15:03:38,634 p=3253 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-13 15:03:38,635 p=3253 u=root n=ansible | changed: [localhost]
+2023-12-13 15:03:38,660 p=3253 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-13 15:03:39,721 p=3253 u=root n=ansible | changed: [localhost]
+2023-12-13 15:03:39,734 p=3253 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-13 15:03:39,796 p=3253 u=root n=ansible | skipping: [localhost]
+2023-12-13 15:03:39,814 p=3253 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-13 15:03:41,393 p=3253 u=root n=ansible | ok: [localhost]
+2023-12-13 15:03:41,402 p=3253 u=root n=ansible | TASK [Ftp : Deny SSH access to the newly created FTP user] *****************************************************************************************************************
+2023-12-13 15:03:42,384 p=3253 u=root n=ansible | ok: [localhost]
+2023-12-13 15:03:42,395 p=3253 u=root n=ansible | TASK [Ftp : Create directory for the user] *********************************************************************************************************************************
+2023-12-13 15:03:43,491 p=3253 u=root n=ansible | ok: [localhost]
+2023-12-13 15:03:43,503 p=3253 u=root n=ansible | TASK [Ftp : Set ownership of the directory] ********************************************************************************************************************************
+2023-12-13 15:03:44,099 p=3253 u=root n=ansible | ok: [localhost]
+2023-12-13 15:03:44,108 p=3253 u=root n=ansible | TASK [Ftp : Change permissions of the directory] ***************************************************************************************************************************
+2023-12-13 15:03:45,574 p=3253 u=root n=ansible | ok: [localhost]
+2023-12-13 15:03:45,799 p=3253 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-13 15:03:45,800 p=3253 u=root n=ansible | localhost                  : ok=7    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-13 15:19:17,809 p=3927 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-13 15:19:17,877 p=3927 u=root n=ansible | TASK [Ftp : Verify shena group exists in server] ***************************************************************************************************************************
+2023-12-13 15:19:19,182 p=3927 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-13 15:19:19,184 p=3927 u=root n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/bin/python3.11"}, "changed": true, "cmd": ["getent", "group", "shena"], "delta": "0:00:00.017598", "end": "2023-12-13 15:19:19.092999", "msg": "non-zero return code", "rc": 2, "start": "2023-12-13 15:19:19.075401", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2023-12-13 15:19:19,185 p=3927 u=root n=ansible | ...ignoring
+2023-12-13 15:19:19,203 p=3927 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-13 15:19:20,117 p=3927 u=root n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/bin/python3.11"}, "changed": true, "cmd": ["getent", "passwd", "shena"], "delta": "0:00:00.013395", "end": "2023-12-13 15:19:20.030098", "msg": "non-zero return code", "rc": 2, "start": "2023-12-13 15:19:20.016703", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2023-12-13 15:19:20,118 p=3927 u=root n=ansible | ...ignoring
+2023-12-13 15:19:20,136 p=3927 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-13 15:19:20,549 p=3927 u=root n=ansible | [DEPRECATION WARNING]: Encryption using the Python crypt module is deprecated. The Python crypt module is deprecated and will be removed from Python 3.13. Install the 
+passlib library for continued encryption functionality. This feature will be removed in version 2.17. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2023-12-13 15:19:22,566 p=3927 u=root n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/bin/python3.11"}, "changed": false, "msg": "Group shena does not exist"}
+2023-12-13 15:19:22,571 p=3927 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-13 15:19:22,572 p=3927 u=root n=ansible | localhost                  : ok=2    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=2   
+2023-12-13 15:19:35,204 p=4010 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-13 15:19:35,288 p=4010 u=root n=ansible | TASK [Ftp : Verify aniket group exists in server] **************************************************************************************************************************
+2023-12-13 15:19:36,674 p=4010 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-13 15:19:36,675 p=4010 u=root n=ansible | changed: [localhost]
+2023-12-13 15:19:36,690 p=4010 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-13 15:19:37,553 p=4010 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": true, "cmd": ["getent", "passwd", "shena"], "delta": "0:00:00.016255", "end": "2023-12-13 15:19:37.447725", "msg": "non-zero return code", "rc": 2, "start": "2023-12-13 15:19:37.431470", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2023-12-13 15:19:37,554 p=4010 u=root n=ansible | ...ignoring
+2023-12-13 15:19:37,570 p=4010 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-13 15:19:37,731 p=4010 u=root n=ansible | [DEPRECATION WARNING]: Encryption using the Python crypt module is deprecated. The Python crypt module is deprecated and will be removed from Python 3.13. Install the 
+passlib library for continued encryption functionality. This feature will be removed in version 2.17. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2023-12-13 15:19:39,626 p=4010 u=root n=ansible | changed: [localhost]
+2023-12-13 15:19:39,642 p=4010 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-13 15:19:41,174 p=4010 u=root n=ansible | changed: [localhost]
+2023-12-13 15:19:41,192 p=4010 u=root n=ansible | TASK [Ftp : Deny SSH access to the newly created FTP user] *****************************************************************************************************************
+2023-12-13 15:19:42,581 p=4010 u=root n=ansible | changed: [localhost]
+2023-12-13 15:19:42,597 p=4010 u=root n=ansible | TASK [Ftp : Create directory for the user] *********************************************************************************************************************************
+2023-12-13 15:19:43,856 p=4010 u=root n=ansible | changed: [localhost]
+2023-12-13 15:19:43,875 p=4010 u=root n=ansible | TASK [Ftp : Set ownership of the directory] ********************************************************************************************************************************
+2023-12-13 15:19:44,782 p=4010 u=root n=ansible | ok: [localhost]
+2023-12-13 15:19:44,801 p=4010 u=root n=ansible | TASK [Ftp : Change permissions of the directory] ***************************************************************************************************************************
+2023-12-13 15:19:45,665 p=4010 u=root n=ansible | ok: [localhost]
+2023-12-13 15:19:45,733 p=4010 u=root n=ansible | RUNNING HANDLER [Ftp : Restart SSH] ****************************************************************************************************************************************
+2023-12-13 15:19:48,513 p=4010 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Service is in unknown state", "status": {}}
+2023-12-13 15:19:48,523 p=4010 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-13 15:19:48,524 p=4010 u=root n=ansible | localhost                  : ok=8    changed=6    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2023-12-14 13:13:19,986 p=6911 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-14 13:13:20,146 p=6911 u=root n=ansible | TASK [Ftp : Verify aniket group exists in server] **************************************************************************************************************************
+2023-12-14 13:13:22,133 p=6911 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-14 13:13:22,135 p=6911 u=root n=ansible | changed: [localhost]
+2023-12-14 13:13:22,155 p=6911 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-14 13:13:23,160 p=6911 u=root n=ansible | changed: [localhost]
+2023-12-14 13:13:23,179 p=6911 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-14 13:13:23,259 p=6911 u=root n=ansible | skipping: [localhost]
+2023-12-14 13:13:23,280 p=6911 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-14 13:13:25,851 p=6911 u=root n=ansible | changed: [localhost]
+2023-12-14 13:13:25,876 p=6911 u=root n=ansible | TASK [Ftp : Deny SSH access to the newly created FTP user] *****************************************************************************************************************
+2023-12-14 13:13:27,560 p=6911 u=root n=ansible | ok: [localhost]
+2023-12-14 13:13:27,580 p=6911 u=root n=ansible | TASK [Ftp : Create directory for the user] *********************************************************************************************************************************
+2023-12-14 13:13:29,341 p=6911 u=root n=ansible | ok: [localhost]
+2023-12-14 13:13:29,367 p=6911 u=root n=ansible | TASK [Ftp : Set ownership of the directory] ********************************************************************************************************************************
+2023-12-14 13:13:30,430 p=6911 u=root n=ansible | ok: [localhost]
+2023-12-14 13:13:30,453 p=6911 u=root n=ansible | TASK [Ftp : Change permissions of the directory] ***************************************************************************************************************************
+2023-12-14 13:13:31,722 p=6911 u=root n=ansible | changed: [localhost]
+2023-12-14 13:13:31,836 p=6911 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-14 13:13:31,837 p=6911 u=root n=ansible | localhost                  : ok=7    changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-14 13:14:19,375 p=7089 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-14 13:14:19,472 p=7089 u=root n=ansible | TASK [Ftp : Verify aniket group exists in server] **************************************************************************************************************************
+2023-12-14 13:14:21,677 p=7089 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-14 13:14:21,680 p=7089 u=root n=ansible | changed: [localhost]
+2023-12-14 13:14:21,704 p=7089 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-14 13:14:24,792 p=7089 u=root n=ansible | changed: [localhost]
+2023-12-14 13:14:24,855 p=7089 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-14 13:14:25,038 p=7089 u=root n=ansible | skipping: [localhost]
+2023-12-14 13:14:25,066 p=7089 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-14 13:14:27,547 p=7089 u=root n=ansible | ok: [localhost]
+2023-12-14 13:14:27,588 p=7089 u=root n=ansible | TASK [Ftp : Deny SSH access to the newly created FTP user] *****************************************************************************************************************
+2023-12-14 13:14:31,130 p=7089 u=root n=ansible | ok: [localhost]
+2023-12-14 13:14:31,156 p=7089 u=root n=ansible | TASK [Ftp : Create directory for the user] *********************************************************************************************************************************
+2023-12-14 13:14:33,373 p=7089 u=root n=ansible | ok: [localhost]
+2023-12-14 13:14:33,397 p=7089 u=root n=ansible | TASK [Ftp : Set ownership of the directory] ********************************************************************************************************************************
+2023-12-14 13:14:34,488 p=7089 u=root n=ansible | ok: [localhost]
+2023-12-14 13:14:34,520 p=7089 u=root n=ansible | TASK [Ftp : Change permissions of the directory] ***************************************************************************************************************************
+2023-12-14 13:14:36,043 p=7089 u=root n=ansible | ok: [localhost]
+2023-12-14 13:14:36,130 p=7089 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-14 13:14:36,131 p=7089 u=root n=ansible | localhost                  : ok=7    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-12-14 13:17:27,768 p=7345 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-14 13:17:27,832 p=7345 u=root n=ansible | TASK [Ftp : Verify ftp group exists in server] *****************************************************************************************************************************
+2023-12-14 13:17:29,083 p=7345 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-14 13:17:29,085 p=7345 u=root n=ansible | changed: [localhost]
+2023-12-14 13:17:29,098 p=7345 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-14 13:17:29,874 p=7345 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": true, "cmd": ["getent", "passwd", "shu"], "delta": "0:00:00.034642", "end": "2023-12-14 13:17:29.766039", "msg": "non-zero return code", "rc": 2, "start": "2023-12-14 13:17:29.731397", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2023-12-14 13:17:29,875 p=7345 u=root n=ansible | ...ignoring
+2023-12-14 13:17:29,889 p=7345 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-14 13:17:30,010 p=7345 u=root n=ansible | [DEPRECATION WARNING]: Encryption using the Python crypt module is deprecated. The Python crypt module is deprecated and will be removed from Python 3.13. Install the 
+passlib library for continued encryption functionality. This feature will be removed in version 2.17. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2023-12-14 13:17:31,665 p=7345 u=root n=ansible | changed: [localhost]
+2023-12-14 13:17:31,679 p=7345 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-14 13:17:32,658 p=7345 u=root n=ansible | changed: [localhost]
+2023-12-14 13:17:32,673 p=7345 u=root n=ansible | TASK [Ftp : Deny SSH access to the newly created FTP user] *****************************************************************************************************************
+2023-12-14 13:17:33,749 p=7345 u=root n=ansible | changed: [localhost]
+2023-12-14 13:17:33,764 p=7345 u=root n=ansible | TASK [Ftp : Create directory for the user] *********************************************************************************************************************************
+2023-12-14 13:17:34,943 p=7345 u=root n=ansible | ok: [localhost]
+2023-12-14 13:17:34,957 p=7345 u=root n=ansible | TASK [Ftp : Set ownership of the directory] ********************************************************************************************************************************
+2023-12-14 13:17:35,675 p=7345 u=root n=ansible | ok: [localhost]
+2023-12-14 13:17:35,689 p=7345 u=root n=ansible | TASK [Ftp : Change permissions of the directory] ***************************************************************************************************************************
+2023-12-14 13:17:36,400 p=7345 u=root n=ansible | changed: [localhost]
+2023-12-14 13:17:36,443 p=7345 u=root n=ansible | RUNNING HANDLER [Ftp : Restart SSH] ****************************************************************************************************************************************
+2023-12-14 13:17:38,671 p=7345 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Service is in unknown state", "status": {}}
+2023-12-14 13:17:38,676 p=7345 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-14 13:17:38,677 p=7345 u=root n=ansible | localhost                  : ok=8    changed=6    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2023-12-14 13:18:26,326 p=7571 u=root n=ansible | PLAY [Configure FTP User on remote server] *********************************************************************************************************************************
+2023-12-14 13:18:26,394 p=7571 u=root n=ansible | TASK [Ftp : Verify aniket group exists in server] **************************************************************************************************************************
+2023-12-14 13:18:27,690 p=7571 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2023-12-14 13:18:27,691 p=7571 u=root n=ansible | changed: [localhost]
+2023-12-14 13:18:27,707 p=7571 u=root n=ansible | TASK [Ftp : Verify if the user exists in server] ***************************************************************************************************************************
+2023-12-14 13:18:28,479 p=7571 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": true, "cmd": ["getent", "passwd", "shu"], "delta": "0:00:00.014134", "end": "2023-12-14 13:18:28.389514", "msg": "non-zero return code", "rc": 2, "start": "2023-12-14 13:18:28.375380", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2023-12-14 13:18:28,480 p=7571 u=root n=ansible | ...ignoring
+2023-12-14 13:18:28,495 p=7571 u=root n=ansible | TASK [Ftp : Create a new user if user not exists] **************************************************************************************************************************
+2023-12-14 13:18:28,612 p=7571 u=root n=ansible | [DEPRECATION WARNING]: Encryption using the Python crypt module is deprecated. The Python crypt module is deprecated and will be removed from Python 3.13. Install the 
+passlib library for continued encryption functionality. This feature will be removed in version 2.17. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2023-12-14 13:18:30,236 p=7571 u=root n=ansible | changed: [localhost]
+2023-12-14 13:18:30,253 p=7571 u=root n=ansible | TASK [Ftp : Add the newly created user to the FTP group] *******************************************************************************************************************
+2023-12-14 13:18:31,234 p=7571 u=root n=ansible | changed: [localhost]
+2023-12-14 13:18:31,249 p=7571 u=root n=ansible | TASK [Ftp : Deny SSH access to the newly created FTP user] *****************************************************************************************************************
+2023-12-14 13:18:32,417 p=7571 u=root n=ansible | ok: [localhost]
+2023-12-14 13:18:32,431 p=7571 u=root n=ansible | TASK [Ftp : Create directory for the user] *********************************************************************************************************************************
+2023-12-14 13:18:33,562 p=7571 u=root n=ansible | ok: [localhost]
+2023-12-14 13:18:33,577 p=7571 u=root n=ansible | TASK [Ftp : Set ownership of the directory] ********************************************************************************************************************************
+2023-12-14 13:18:34,387 p=7571 u=root n=ansible | ok: [localhost]
+2023-12-14 13:18:34,401 p=7571 u=root n=ansible | TASK [Ftp : Change permissions of the directory] ***************************************************************************************************************************
+2023-12-14 13:18:35,117 p=7571 u=root n=ansible | ok: [localhost]
+2023-12-14 13:18:35,169 p=7571 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2023-12-14 13:18:35,170 p=7571 u=root n=ansible | localhost                  : ok=8    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   

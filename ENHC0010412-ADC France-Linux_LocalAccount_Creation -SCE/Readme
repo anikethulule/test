@@ -1,0 +1,7 @@
+# Configure all  server ip or name in inventory file or we can directly pass it in playbook.yml file infront of hosts .
+
+# While excuting playbook make sure we are passing vaule 
+# For Example:ansible-playbook  playbook.yml  --extra-vars "username=Ramesh userpassword=India@12 Groupname=aniket"
+
+# If we need to change the Defaults groupname then edit the Below path:
+#ENHC0010412-ADC France-Linux_LocalAccount_Creation -SCE/roles/UserPermission/vars/main.yml

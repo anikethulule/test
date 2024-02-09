@@ -1,0 +1,42 @@
+2024-01-08 13:37:33,713 p=649 u=root n=ansible | PLAY [Configure the Host] **************************************************************************************************************************************************
+2024-01-08 13:37:33,804 p=649 u=root n=ansible | TASK [UserPermission : Verify if User already exists locally] **************************************************************************************************************
+2024-01-08 13:37:35,635 p=649 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2024-01-08 13:37:35,636 p=649 u=root n=ansible | changed: [localhost]
+2024-01-08 13:37:35,654 p=649 u=root n=ansible | TASK [UserPermission : Create Local User if not exists] ********************************************************************************************************************
+2024-01-08 13:37:35,745 p=649 u=root n=ansible | skipping: [localhost]
+2024-01-08 13:37:35,771 p=649 u=root n=ansible | TASK [UserPermission : Check if User is in Sudoers List] *******************************************************************************************************************
+2024-01-08 13:37:36,854 p=649 u=root n=ansible | changed: [localhost]
+2024-01-08 13:37:36,876 p=649 u=root n=ansible | TASK [UserPermission : Add User to Sudoers List] ***************************************************************************************************************************
+2024-01-08 13:37:36,977 p=649 u=root n=ansible | skipping: [localhost]
+2024-01-08 13:37:37,070 p=649 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2024-01-08 13:37:37,073 p=649 u=root n=ansible | localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2024-01-08 17:29:59,401 p=7414 u=root n=ansible | PLAY [test example] ********************************************************************************************************************************************************
+2024-01-08 17:29:59,477 p=7414 u=root n=ansible | TASK [install package] *****************************************************************************************************************************************************
+2024-01-08 17:30:09,797 p=7414 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2024-01-08 17:30:09,800 p=7414 u=root n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/bin/python3.11"}, "changed": false, "msg": "Failed to download metadata for repo 'ol8_developer_EPEL': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried", "rc": 1, "results": []}
+2024-01-08 17:30:09,807 p=7414 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2024-01-08 17:30:09,808 p=7414 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-01-08 17:31:46,933 p=7512 u=root n=ansible | PLAY [test example] ********************************************************************************************************************************************************
+2024-01-08 17:31:46,997 p=7512 u=root n=ansible | TASK [install package] *****************************************************************************************************************************************************
+2024-01-08 17:32:59,556 p=7512 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2024-01-08 17:32:59,558 p=7512 u=root n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {"discovered_interpreter_python": "/bin/python3.11"}, "changed": false, "msg": "Failed to download metadata for repo 'ol8_developer_EPEL_modular': Cannot download repomd.xml: Cannot download repodata/repomd.xml: All mirrors were tried", "rc": 1, "results": []}
+2024-01-08 17:32:59,564 p=7512 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2024-01-08 17:32:59,565 p=7512 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-01-08 17:34:27,315 p=7642 u=root n=ansible | PLAY [test example] ********************************************************************************************************************************************************
+2024-01-08 17:34:27,450 p=7642 u=root n=ansible | TASK [install package] *****************************************************************************************************************************************************
+2024-01-08 17:39:03,063 p=7642 u=root n=ansible |  [ERROR]: User interrupted execution
+
+2024-01-08 17:39:29,576 p=7849 u=root n=ansible | PLAY [test example] ********************************************************************************************************************************************************
+2024-01-08 17:39:29,644 p=7849 u=root n=ansible | TASK [install package] *****************************************************************************************************************************************************
+2024-01-08 17:40:35,535 p=7849 u=root n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /bin/python3.11, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information.
+
+2024-01-08 17:40:35,536 p=7849 u=root n=ansible | ok: [localhost]
+2024-01-08 17:40:35,584 p=7849 u=root n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2024-01-08 17:40:35,585 p=7849 u=root n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

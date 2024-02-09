@@ -1,0 +1,24 @@
+    - name: Verify if User already exists locally
+      command: getent passwd "{{ username }}"
+      register: user_check
+      ignore_errors: yes
+
+    - name: Create Local User if not exists
+      user:
+        name: "{{ username }}"
+        group: "{{ Groupname }}"       
+        home: /home/{{ username }}
+        password: "{{ userpassword | password_hash('sha512') }}"
+        shell: /bin/bash  
+      when: user_check.rc != 0
+
+    - name: Check if User is in Sudoers List
+      command: "grep -q '^{{ username }}' /etc/sudoers"
+      register: sudoers_check
+      ignore_errors: yes
+
+    - name: Add User to Sudoers List
+      lineinfile:
+        path: "/etc/sudoers"
+        line: "{{ username }} ALL=(ALL:ALL) ALL"
+      when: user_check.rc != 0  or sudoers_check.rc !=0

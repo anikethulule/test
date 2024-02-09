@@ -1,0 +1,3 @@
+[Ftp_Automation]
+localhost ansible_connection=local
+

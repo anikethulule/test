@@ -1,0 +1,8 @@
+---
+- name: Configure the Host
+  hosts: User_Automation
+  become: yes
+  gather_facts: false
+  roles:
+   - UserPermission
+    

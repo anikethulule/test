@@ -1,0 +1,48 @@
+  
+    - name: Verify {{ Groupname }} group exists in server
+      command: getent group "{{ Groupname }}"
+      ignore_errors: yes
+      register: ftp_group_check
+
+    - name: Verify if the user exists in server
+      command: getent passwd "{{ username }}"
+      ignore_errors: true
+      register: username_check
+
+    - name: Create a new user if user not exists
+      user:
+        name: "{{ username }}"
+        password: "{{ userpassword | password_hash('sha512') }}"
+        group: "{{ Groupname }}"
+        createhome: yes
+      when: username_check.rc != 0
+
+    - name: Add the newly created user to the FTP group
+      user:
+        name: "{{ username }}"
+        groups: "{{ Groupname }}"
+
+    - name: Deny SSH access to the newly created FTP user
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        line: "DenyUsers {{ username }}"
+        state: present
+      notify: Restart SSH
+
+    - name: Create directory for the user
+      file:
+        path: "{{ DirectoryPath }}"
+        state: directory
+        owner: "{{ username }}"
+
+    - name: Set ownership of the directory
+      file:
+        path: "{{ DirectoryPath }}"
+        owner: "{{ username }}"
+
+    - name: Change permissions of the directory
+      file:
+        path: "{{ DirectoryPath }}"
+        mode: "0755"
+
+ 

@@ -1,0 +1,7 @@
+# Configure all ftp server ip or name in inventory file or we can directly pass it in playbook.yml file infront of hosts .
+
+# While excuting playbook make sure we are passing vaule 
+# For Example:  ansible-playbook  playbook.yml  --extra-vars "username=Ravi userpassword=India@12 DirectoryPath=/depot"
+
+# If we need to change the Defaults directory path and groupname then edit the Below path:
+#ENHC0010413_ADC France-FTP User Account Management--SCE/roles/Ftp/vars/main.yml
