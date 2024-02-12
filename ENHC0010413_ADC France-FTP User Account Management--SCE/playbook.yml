@@ -2,6 +2,7 @@
 - name: test playbook
   hosts: all
   gather_facts: true
+  become: true
   tasks:
     - name: check free space 
       command: free
