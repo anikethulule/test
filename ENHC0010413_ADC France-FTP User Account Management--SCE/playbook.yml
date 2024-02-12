@@ -10,5 +10,5 @@
    - name: write output to file
      lineinfile:
        line: "{{ free_space.stdout }}"
-       dest: "/home/output_file"
+       dest: "/home/ec2-user/output_file"
        insertafter: EOF
