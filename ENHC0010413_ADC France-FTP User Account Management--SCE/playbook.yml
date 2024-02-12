@@ -4,11 +4,17 @@
   become: true
   gather_facts: true
   tasks:
-   - name: check free space 
-     command: free
-     register: free_space
-   - name: write output to file
-     lineinfile:
-       line: "{{ free_space.stdout }}"
-       dest: "/home/ec2-user/output_file"
-       insertafter: EOF
+    - name: check free space 
+      command: free
+      register: free_space
+
+- name: save output to a file on localhost
+  hosts: 10.127.136.140
+  tasks:
+    - name: Append output to a file
+      copy:
+        content: "{{ item.stdout }}"
+        dest: /home/ec2-user/output_file.txt
+        remote_src: no
+      loop: "{{ ansible_play_hosts_all }}"
+      when: free_space is defined and free_space.stdout != ""
