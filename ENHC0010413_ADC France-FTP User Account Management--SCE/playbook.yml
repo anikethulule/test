@@ -10,7 +10,7 @@
       ignore_errors: yes
 
     - name: cat /proc/meminfo
-      command: cat /proc/meminfo
+      command: df -h
       register: meminfo_output
       delegate_to: "{{ inventory_hostname }}"
       ignore_errors: yes
