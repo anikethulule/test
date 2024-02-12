@@ -17,4 +17,7 @@
         dest: /home/ec2-user/output_file.txt
         remote_src: no
       loop: "{{ ansible_play_hosts_all }}"
-      when: free_space is defined and free_space.stdout != ""
+      when: 
+        - free_space is defined
+        - free_space.stdout is defined
+        - free_space.stdout != ""
