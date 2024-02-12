@@ -7,17 +7,11 @@
     - name: check free space 
       command: free
       register: free_space
-
-- name: save output to a file on localhost
-  hosts: 10.127.136.140
-  tasks:
-    - name: Append output to a file
-      copy:
-        content: "{{ item.stdout }}"
-        dest: /home/ec2-user/output_file.txt
-        remote_src: no
-      loop: "{{ ansible_play_hosts_all }}"
-      when: 
-        - free_space is defined
-        - free_space.stdout is defined
-        - free_space.stdout != ""
+      delegate_to: "{{ inventory_hostname }}"
+      ignore_errors: yes
+    - name: append output to a file on localhost
+      local_action:
+        module: lineinfile
+        path: /home/ec2-user/output_file
+        line: "{{ free_space.stdout }}"
+      delegate_to: 10.127.136.140
