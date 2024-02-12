@@ -9,9 +9,16 @@
       delegate_to: "{{ inventory_hostname }}"
       ignore_errors: yes
 
+    - name: cat /proc/meminfo
+      command: cat /proc/meminfo
+      register: meminfo_output
+      delegate_to: "{{ inventory_hostname }}"
+      ignore_errors: yes
+
+
     - name: store free space output in a variable
       set_fact:
-        free_space_output: "{{ free_space.stdout }}"
+        combined_output: "{{ free_space_output | default([]) + [meminfo_output.stdout | default('')] }}"
 
     - debug:
-        var: free_space_output
+        var: combined_output
