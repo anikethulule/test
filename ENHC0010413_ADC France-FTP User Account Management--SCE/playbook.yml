@@ -19,7 +19,7 @@
 
     - name: store free space output in a variable
       set_fact:
-        combined_output: "{{ free_space_output | default([]) + [meminfo_output.stdout | default('')] }}"
+        combined_output: "{{ combined_output | default('') }}{{ free_space.stdout | default('') }}\n{{ meminfo_output.stdout | default('') }}"
 
     - debug:
         var: combined_output
