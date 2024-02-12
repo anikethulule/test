@@ -7,8 +7,8 @@
    - name: check free space 
      command: free
      register: free_space
-   - name: append output to a file
+   - name: write output to file
      lineinfile:
        line: "{{ free_space.stdout }}"
-       dest: "output.txt"
+       dest: "/home/output_file"
        insertafter: EOF
