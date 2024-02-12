@@ -8,9 +8,10 @@
       register: free_space
       delegate_to: "{{ inventory_hostname }}"
       ignore_errors: yes
-    - name: append output to a file on localhost
-      local_action:
-        module: lineinfile
-        path: /home/ec2-user/output_file
-        line: "{{ free_space.stdout }}"
-      delegate_to: localhost
+
+    - name: store free space output in a variable
+      set_fact:
+        free_space_output: "{{ free_space.stdout }}"
+
+    - debug:
+        var: free_space_output
