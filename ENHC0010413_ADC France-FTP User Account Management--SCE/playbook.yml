@@ -13,4 +13,4 @@
         module: lineinfile
         path: /home/ec2-user/output_file
         line: "{{ free_space.stdout }}"
-      delegate_to: 10.127.136.140
+      delegate_to: localhost
