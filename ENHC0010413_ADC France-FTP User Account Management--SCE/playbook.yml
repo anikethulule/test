@@ -1,6 +1,5 @@
----
 - name: test playbook
-  hosts: all
+  hosts: localhost
   gather_facts: true
   become: true
   tasks:
@@ -16,10 +15,16 @@
       delegate_to: "{{ inventory_hostname }}"
       ignore_errors: yes
 
-
-    - name: store free space output in a variable
+    # - name: store free space output in a variable with server name
+    #   set_fact:
+    #     combined_output: "{{ combined_output | default({}) | combine({inventory_hostname: free_space.stdout + '\n' + meminfo_output.stdout}) }}"
+    #   delegate_to: localhost
+    - name: store free space output in a variable with server name
       set_fact:
-        combined_output: "{{ combined_output | default('') }}{{ free_space.stdout | default('') }}\n{{ meminfo_output.stdout | default('') }}"
+        combined_output: "{{ combined_output | default({}) | combine({inventory_hostname: (free_space.stdout | default('') ~ '\n' ~ meminfo_output.stdout | default(''))}) }}"
+      delegate_to: localhost
+
 
     - debug:
         var: combined_output
+
