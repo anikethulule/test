@@ -1,30 +1,16 @@
-- name: test playbook
+---  
+- name: Check CPU Utilization and Send Email
   hosts: all
-  gather_facts: true
-  become: true
+  gather_facts: yes
   tasks:
-    - name: check free space 
-      command: free
-      register: free_space
-      delegate_to: "{{ inventory_hostname }}"
-      ignore_errors: yes
+    - name: Get CPU Utilization
+      win_shell: Get-WmiObject Win32_Processor | Measure-Object -Property LoadPercentage -Average | Select-Object Average
+      register: cpu_utilization
 
-    - name: cat /proc/meminfo
-      command: df -h
-      register: meminfo_output
-      delegate_to: "{{ inventory_hostname }}"
-      ignore_errors: yes
+    - name: Debug Print CPU Utilization
+      debug:
+        var: cpu_utilization.stdout_lines
 
-    # - name: store free space output in a variable with server name
-    #   set_fact:
-    #     combined_output: "{{ combined_output | default({}) | combine({inventory_hostname: free_space.stdout + '\n' + meminfo_output.stdout}) }}"
-    #   delegate_to: localhost
-    - name: store free space output in a variable with server name
-      set_fact:
-        combined_output: "{{ combined_output | default({}) | combine({inventory_hostname: (free_space.stdout | default('') ~ '\n' ~ meminfo_output.stdout | default(''))}) }}"
-      delegate_to: localhost
-
-
-    - debug:
-        var: combined_output
+   
+      
 
