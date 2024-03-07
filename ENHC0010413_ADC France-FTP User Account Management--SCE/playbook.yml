@@ -3,13 +3,17 @@
   hosts: all
   gather_facts: yes
   tasks:
-    - name: Get CPU Utilization
-      win_shell: Get-WmiObject Win32_Processor | Measure-Object -Property LoadPercentage -Average | Select-Object Average
-      register: cpu_utilization
-
-    - name: Debug Print CPU Utilization
-      debug:
-        var: cpu_utilization.stdout_lines
+      - name: Get input for session details
+        vars_prompt:
+          - name: sid
+            prompt: "Enter SID"
+            private: no
+          - name: serial
+            prompt: "Enter Serial#"
+            private: no
+          - name: inst_id
+            prompt: "Enter Instance ID"
+            private: no
 
    
       
