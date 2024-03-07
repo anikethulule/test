@@ -1,16 +1,16 @@
 ---
-- name: Check CPU Utilization and Send Email
-  hosts: all
-  gather_facts: yes
+- hosts: all
+  vars_prompt:
+
+    - name: username
+      prompt: What is your username?
+      private: false
+
+    - name: password
+      prompt: What is your password?
+
   tasks:
-    - name: Get input for session details
-      vars_prompt:
-        - name: sid
-          prompt: "Enter SID"
-          private: no
-        - name: serial
-          prompt: "Enter Serial#"
-          private: no
-        - name: inst_id
-          prompt: "Enter Instance ID"
-          private: no
+
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: 'Logging in as {{ username }}'
