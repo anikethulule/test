@@ -13,7 +13,7 @@
       shell: |
         df -h
       register: disk_utlization
-      delegate_to: "{{ inventory_hostname }}"
+      
 
     - name: Set content for txt file
       set_fact:
@@ -24,7 +24,7 @@
       shell: |
         free -h
       register: memory_utlisation
-      delegate_to: "{{ inventory_hostname }}"
+     
 
     - name: Set content for txt file
       set_fact:
