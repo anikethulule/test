@@ -17,7 +17,7 @@
     - name: Set content for txt file
       set_fact:
         txt_output: "{{ txt_output }}\n\n\n\nDisk Utilization Status Command for {{ inventory_hostname }}:\n{{ disk_utlization.stdout_lines | join('\n') }}"
-      delegate_to: "{{ inventory_hostname }}"
+      
     
     - name: Execute memory status command
       shell: |
@@ -29,7 +29,7 @@
     - name: Set content for txt file
       set_fact:
         txt_output: "{{ txt_output }}\n\n\n\nMemory Utilization Status Command for {{ inventory_hostname }}:\n{{ memory_utlisation.stdout_lines | join('\n') }}"
-      delegate_to: "{{ inventory_hostname }}"
+      
 
     - name: display data
       debug:
