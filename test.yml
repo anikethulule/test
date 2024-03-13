@@ -1,29 +1,38 @@
-- name: test playbook
+---
+- name: Oracle Database Automation 584
   hosts: all
-  gather_facts: true
-  become: true
+  vars:
+    ansible_remote_tmp: /tmp
+    txt_output: ""
+    output_path: out1.txt #Enter the output path 
+  become: yes
+  # become_user: oracle
+  # become_flags: -i
   tasks:
-    - name: check free space 
-      command: free -h
-      register: free_space
+    - name: Execute disk utilization status command #16
+      shell: |
+        df -h
+      register: disk_utlization
       delegate_to: "{{ inventory_hostname }}"
-      ignore_errors: yes
 
-    - name: cat /proc/meminfo
-      command: df -h
-      register: meminfo_output
-      delegate_to: "{{ inventory_hostname }}"
-      ignore_errors: yes
-
-    # - name: store free space output in a variable with server name
-    #   set_fact:
-    #     combined_output: "{{ combined_output | default({}) | combine({inventory_hostname: free_space.stdout + '\n' + meminfo_output.stdout}) }}"
-    #   delegate_to: localhost
-    - name: store free space output in a variable with server name
+    - name: Set content for txt file
       set_fact:
-        combined_output: "{{ combined_output | default({}) | combine({inventory_hostname: (free_space.stdout | default('') ~ '\n' ~ meminfo_output.stdout | default(''))}) }}"
+        txt_output: "{{ txt_output }}\n\n\n\nDisk Utilization Status Command:\n{{ disk_utlization.stdout_lines | join('\n') }}"
+      delegate_to: "{{ inventory_hostname }}"
+    
+    - name: Execute memory status command #16
+      shell: |
+        free -h
+      register: memory_utlisation
+      delegate_to: "{{ inventory_hostname }}"
+
+    - name: Set content for txt file
+      set_fact:
+        txt_output: "{{ txt_output }}\n\n\n\nMemory Utilization Status Command:\n{{ memory_utlisation.stdout_lines | join('\n') }}"
+      delegate_to: "{{ inventory_hostname }}"
+
+    - name: display data
+      debug:
+        msg: "{{ txt_output }}"
       delegate_to: localhost
 
-
-    - debug:
-        var: combined_output
