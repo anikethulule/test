@@ -4,7 +4,7 @@
   vars:
     ansible_remote_tmp: /tmp
     txt_output: ""
-    output_path: out1.txt #Enter the output path 
+    output_path: /tmp/out1.txt #Enter the output path 
   become: yes
   # become_user: oracle
   # become_flags: -i
