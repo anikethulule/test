@@ -1,6 +1,6 @@
 ---
 - name: Oracle Database Automation 584
-  hosts: all
+  hosts: all  # here you can add your target server
   vars:
     ansible_remote_tmp: /tmp
     txt_output: ""
@@ -13,26 +13,31 @@
       shell: |
         df -h
       register: disk_utlization
-      
+      delegate_to: "{{ inventory_hostname }}"
 
     - name: Set content for txt file
       set_fact:
         txt_output: "{{ txt_output }}\n\n\n\nDisk Utilization Status Command:\n{{ disk_utlization.stdout_lines | join('\n') }}"
-      
+      delegate_to: "{{ inventory_hostname }}"
     
     - name: Execute memory status command #16
       shell: |
         free -h
       register: memory_utlisation
-     
+      delegate_to: "{{ inventory_hostname }}"
 
     - name: Set content for txt file
       set_fact:
         txt_output: "{{ txt_output }}\n\n\n\nMemory Utilization Status Command:\n{{ memory_utlisation.stdout_lines | join('\n') }}"
-     
+      delegate_to: "{{ inventory_hostname }}"
 
-    - name: display data
-      debug:
-        msg: "{{ txt_output }}"
-      delegate_to: localhost
+ 
+       
 
+    - name: Write all content to output_file.txt
+      copy:
+        content: "{{ txt_output }}"
+        dest: "{{ output_path }}"
+      delegate_to: 10.127.136.172
+
+      
