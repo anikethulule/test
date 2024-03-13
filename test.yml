@@ -4,7 +4,7 @@
   vars:
     ansible_remote_tmp: /tmp
     txt_output: ""
-    output_path: /tmp/out1.txt #Enter the output path 
+    output_path: out1.txt #Enter the output path 
   become: yes
   # become_user: oracle
   # become_flags: -i
@@ -31,13 +31,13 @@
         txt_output: "{{ txt_output }}\n\n\n\nMemory Utilization Status Command:\n{{ memory_utlisation.stdout_lines | join('\n') }}"
       delegate_to: "{{ inventory_hostname }}"
 
- 
-       
+    - name: display data
+      debug:
+        msg: "{{ txt_output }}"
 
     - name: Write all content to output_file.txt
       copy:
         content: "{{ txt_output }}"
         dest: "{{ output_path }}"
+        
       delegate_to: 10.127.136.172
-
-      
