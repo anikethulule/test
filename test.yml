@@ -11,7 +11,7 @@
       shell: |
         df -h
       register: disk_utlization
-      delegate_to: "{{ inventory_hostname }}"
+     
       ignore_errors: yes
 
     - name: Set content for txt file
@@ -23,7 +23,7 @@
       shell: |
         free -h
       register: memory_utlisation
-      delegate_to: "{{ inventory_hostname }}"
+     
       ignore_errors: yes
 
     - name: Set content for txt file
@@ -34,7 +34,7 @@
     - name: display data
       debug:
         msg: "{{ txt_output }}"
-      delegate_to: "{{ inventory_hostname }}"
+     
 
     - name: Write all content to output_file.txt
       lineinfile:
