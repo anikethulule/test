@@ -7,6 +7,10 @@
     output_path: /tmp/out1.txt # Enter the output path 
   become: yes
   tasks:
+    - name: Set content for txt file
+      set_fact:
+        txt_output: "{{ txt_output }}\n\n\n\n Server Name : {{ inventory_hostname }}"
+
     - name: Execute disk utilization status command
       shell: |
         df -h
@@ -16,7 +20,7 @@
 
     - name: Set content for txt file
       set_fact:
-        txt_output: "{{ txt_output }}\n\n\n\nDisk Utilization Status Command for {{ inventory_hostname }}:\n{{ disk_utlization.stdout_lines | join('\n') }}"
+        txt_output: "{{ txt_output }}\n\n\n\nDisk Utilization Status :\n{{ disk_utlization.stdout_lines | join('\n') }}"
       
     
     - name: Execute memory status command
@@ -28,7 +32,7 @@
 
     - name: Set content for txt file
       set_fact:
-        txt_output: "{{ txt_output }}\n\n\n\nMemory Utilization Status Command for {{ inventory_hostname }}:\n{{ memory_utlisation.stdout_lines | join('\n') }}"
+        txt_output: "{{ txt_output }}\n\n\n\nMemory Utilization Status Command :\n{{ memory_utlisation.stdout_lines | join('\n') }}"
       
 
     - name: display data
