@@ -1,0 +1,9 @@
+---
+- name: creating file
+  hosts: all
+  become: false
+  tasks:
+     - name: create file
+       win_file:
+               path: "C:/Users/Administrator/Desktop/test.txt"
+               state: touch 
