@@ -1,0 +1,19 @@
+---
+- name: Kill Oracle session
+  hosts: all
+
+  tasks:
+    - name: Get input for session details
+      pause:
+        prompt: "Enter SID, Serial# and Instance ID separated by commas (e.g., SID,Serial#,Instance ID)"
+      register: user_input
+
+    - name: Parse input
+      set_fact:
+        sid: "{{ user_input.user_input.split(',')[0] }}"
+        serial: "{{ user_input.user_input.split(',')[1] }}"
+        inst_id: "{{ user_input.user_input.split(',')[2] }}"
+
+    - name: Display session details
+      debug:
+        msg: "SID: {{ sid }}, Serial#: {{ serial }}, Instance ID: {{ inst_id }}"
